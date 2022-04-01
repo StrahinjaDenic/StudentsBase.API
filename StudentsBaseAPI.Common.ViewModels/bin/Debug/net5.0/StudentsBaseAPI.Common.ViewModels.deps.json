@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "StudentsBaseAPI.Common.ViewModels/1.0.0": {
+        "runtime": {
+          "StudentsBaseAPI.Common.ViewModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StudentsBaseAPI.Common.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "StudentsBaseAPI.Common.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/StudentsBaseAPI.Common.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentsBaseAPI.Common.Models.dll": {}
+        }
+      },
+      "StudentsBaseAPI.Common.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/StudentsBaseAPI.Common.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentsBaseAPI.Common.ViewModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StudentsBaseAPI.Common.Models/1.0.0": {
+      "type": "project",
+      "path": "../StudentsBaseAPI.Common.Models/StudentsBaseAPI.Common.Models.csproj",
+      "msbuildProject": "../StudentsBaseAPI.Common.Models/StudentsBaseAPI.Common.Models.csproj"
+    },
+    "StudentsBaseAPI.Common.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../StudentsBaseAPI.Common.ViewModels/StudentsBaseAPI.Common.ViewModels.csproj",
+      "msbuildProject": "../StudentsBaseAPI.Common.ViewModels/StudentsBaseAPI.Common.ViewModels.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "StudentsBaseAPI.Common.Models >= 1.0.0",
+      "StudentsBaseAPI.Common.ViewModels >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\korisnik\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.IBusinessLogic\\StudentsBaseAPI.IBusinessLogic.csproj",
+      "projectName": "StudentsBaseAPI.IBusinessLogic",
+      "projectPath": "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.IBusinessLogic\\StudentsBaseAPI.IBusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
+      "outputPath": "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.IBusinessLogic\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.Common.Models\\StudentsBaseAPI.Common.Models.csproj": {
+              "projectPath": "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.Common.Models\\StudentsBaseAPI.Common.Models.csproj"
+            },
+            "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.Common.ViewModels\\StudentsBaseAPI.Common.ViewModels.csproj": {
+              "projectPath": "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.Common.ViewModels\\StudentsBaseAPI.Common.ViewModels.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

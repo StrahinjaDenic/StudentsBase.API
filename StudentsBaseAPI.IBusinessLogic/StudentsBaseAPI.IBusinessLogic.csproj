@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentsBaseAPI.Common.Models\StudentsBaseAPI.Common.Models.csproj" />
+    <ProjectReference Include="..\StudentsBaseAPI.Common.ViewModels\StudentsBaseAPI.Common.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "J7PPcKmWBmqOVdHvMeaLt39eH0Lz8GOGyiMbINEqvDHpSou/c+euf3wix7CXaOMNB5MfjE79zkb/CxuV0sRwvw==",
+  "success": true,
+  "projectFilePath": "D:\\Projekti\\StudentsBase\\StudentsBase.API\\StudentsBaseAPI.BusinessLogic\\StudentsBaseAPI.BusinessLogic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\korisnik\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\korisnik\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\korisnik\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\korisnik\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\korisnik\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\korisnik\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\korisnik\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

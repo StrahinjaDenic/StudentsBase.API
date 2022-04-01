@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "StudentsBaseAPI.IDataAccess/1.0.0": {
+        "dependencies": {
+          "StudentsBaseAPI.Common.Models": "1.0.0"
+        },
+        "runtime": {
+          "StudentsBaseAPI.IDataAccess.dll": {}
+        }
+      },
+      "StudentsBaseAPI.Common.Models/1.0.0": {
+        "runtime": {
+          "StudentsBaseAPI.Common.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StudentsBaseAPI.IDataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentsBaseAPI.Common.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
