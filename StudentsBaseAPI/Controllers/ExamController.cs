@@ -34,15 +34,15 @@ namespace StudentsBaseAPI.Controllers
         [Route("Index")]
         public async Task<IActionResult> IndexAsync(int? index = null, string courseName = null, DateTime? examDate = null)
         {
-            var exams = await _examBL.GetAllExamFilteredAsync(index, courseName, examDate);
-
-            return Ok(exams);
+            _logger.LogInformation("Get filtered eams");
+            return await TryReturnOk(() => _examBL.GetAllExamFilteredAsync(index, courseName, examDate));
         }
 
         [HttpPost]
         [Route("Save")]
         public async Task<IActionResult> SaveAsync(ExamInputViewModel model)
         {
+            _logger.LogInformation("Save exam");
             return await TryReturnOk(() => _examBL.CreateOrEditAsync(model));
         }
 

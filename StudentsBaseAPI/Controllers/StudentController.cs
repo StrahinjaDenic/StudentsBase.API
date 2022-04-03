@@ -33,8 +33,8 @@ namespace StudentsBaseAPI.Controllers
         [Route("Index")]
         public async Task<IActionResult> IndexAsync(int? index, string name, string surname)
         {
-            var student = await _studentBL.GetAllStudentsFilteredAsync(index, name, surname);
-            return Ok(student);
+            _logger.LogInformation("Get filtered students");
+            return await TryReturnOk(() => _studentBL.GetAllStudentsFilteredAsync(index, name, surname));
         }
 
 
@@ -42,14 +42,15 @@ namespace StudentsBaseAPI.Controllers
         [Route("ProfessorCourses")]
         public async Task<IActionResult> GetAllProfessorCoursesAnsyc()
         {
-            var profCourses = _studentBL.GetAllProfessorCoursesAsync();
-            return Ok(await profCourses);
+            _logger.LogInformation("Get all professor courses");
+            return await TryReturnOk(() => _studentBL.GetAllProfessorCoursesAsync());
         }
 
         [HttpPost]
         [Route("Save")]
         public async Task<IActionResult> SaveAsync(StudentInputViewModel model)
         {
+            _logger.LogInformation($"Save student {model.Name} {model.Surname}");
             return await TryReturnOk(() => _studentBL.CreateOrEditAsync(model));
         }
 

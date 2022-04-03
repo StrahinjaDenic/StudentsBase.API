@@ -35,15 +35,15 @@ namespace StudentsBaseAPI.Controllers
         [Route("Index")]
         public async Task<IActionResult> IndexAnsyc(string name = null, string surname = null)
         {
-            var prof = _professorBL.GetAllProfessorsFilteredAsync(name, surname);
-
-            return Ok(await prof);
+            _logger.LogInformation("Get filtered professors");
+            return await TryReturnOk(() => _professorBL.GetAllProfessorsFilteredAsync(name, surname));
         }
 
         [HttpPost]
         [Route("Save")]
         public async Task<IActionResult> SaveAsync(ProfessorInputViewModel model)
         {
+            _logger.LogInformation($"Save professor {model.Name} {model.Surname}");
             return await TryReturnOk(() => _professorBL.CreateOrEditAsync(model));
         }
 
