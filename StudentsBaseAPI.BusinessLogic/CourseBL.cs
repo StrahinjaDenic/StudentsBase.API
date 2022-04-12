@@ -49,7 +49,7 @@ namespace StudentsBaseAPI.BusinessLogic
         {
             var course = _mapper.Map<Course>(model);
 
-            ValidationResponse response = new() { IsSuccess = false };
+            var response = new ValidationResponse();
 
             response.IsSuccess = await _courseDAL.CreateOrEditAsync(course);
             response.Message = response.IsSuccess == true ? $"Course added/updated" : "Course was not added.";
@@ -59,45 +59,26 @@ namespace StudentsBaseAPI.BusinessLogic
 
         public async Task<CourseInputViewModel> GetFirstCourseInputViewModelAsync(int id)
         {
-            var result = await GetFirstCourseAsync(id);
+            var result = await _courseDAL.GetFirstCourseAsync(id);
             return _mapper.Map<CourseInputViewModel>(result);
         }
 
-        //MVC
-        //public async Task<CourseViewModel> GetFirstCourseViewModelAsync(int id)
-        //{
-        //    var firstCourse = await GetFirstCourseAsync(id);
-
-        //    return new CourseViewModel
-        //    {
-        //        Id = firstCourse.Id,
-        //        Code = firstCourse.Code,
-        //        Name = firstCourse.Name,
-        //        Points = firstCourse.Bodovi,
-        //        StudentsLaidings = firstCourse.Exams.GroupBy(c => c.StudentId)
-        //                                                  .Select(c => ($"{c.First().StudentNavigation.Name} {c.First().StudentNavigation.Surname}", c.Count(), c.First().StudentNavigation.Id))
-        //                                                  .OrderByDescending(c => c.Item2)
-        //                                                  .ToList(),
-        //        GradeAverage = firstCourse.Exams.Count > 0 ? Math.Round(firstCourse.Exams.Average(c => c.Grade), 2) : null,
-        //        PofessorNamesandSurnames = firstCourse.ProfessorCourses.GroupBy(c => c.IdProfessor)
-        //                                                               .Select(c => ($"{ c.First().ProfessorNavigation.Name} {c.First().ProfessorNavigation.Surname}"))
-        //                                                               .ToList()
-        //    };
-        //}
-
-        public async Task<Course> GetFirstCourseAsync(int id)
+        public async Task<ValidationResponse> DeleteCourseAsync(int courseId)
         {
-            return await _courseDAL.GetFirstCourseAsync(id);
-        }
+            var response = new ValidationResponse ();
 
-        public async Task<bool> DeleteCourseAsync(int courseId)
-        {
             if (courseId > 0)
             {
-                return await _courseDAL.DeleteCourseAsync(courseId);
+                response.IsSuccess = await _courseDAL.DeleteCourseAsync(courseId);
+                response.Message = response.IsSuccess == true ? "Course succesfully deleted!" : "Error occured!";
+            }
+            else
+            {
+                response.IsSuccess = false;
+                response.Message = "ID value for course is not valid!";
             }
 
-            throw new ArgumentException("ID value for course is not valid");
+            return response;
         }
 
         #endregion

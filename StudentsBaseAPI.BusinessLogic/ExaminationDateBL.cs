@@ -53,14 +53,21 @@ namespace StudentsBaseAPI.BusinessLogic
             return await _examinationDateDAL.GetFirstExaminationDateAsync(examinationDateId);
         }
 
-        public async Task<bool> DeleteExaminationDateAsync(int examinationDateId)
+        public async Task<ValidationResponse> DeleteExaminationDateAsync(int examinationDateId)
         {
+            var response = new ValidationResponse();
             if (examinationDateId > 0)
             {
-                return await _examinationDateDAL.DeleteExaminationDateAsync(examinationDateId);
+                response.IsSuccess = await _examinationDateDAL.DeleteExaminationDateAsync(examinationDateId);
+                response.Message = response.IsSuccess == true ? "Examination date succesfully deleted!" : "Error occured!";
+            }
+            else
+            {
+                response.IsSuccess = false;
+                response.Message = "ID value for examination date is not valid!";
             }
 
-            throw new ArgumentException("ID value for examination date is not valid");
+            return response;
         }
 
         #endregion

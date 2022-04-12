@@ -13,6 +13,6 @@ namespace StudentsBaseAPI.IBusinessLogic
 
         Task<ExaminationDate> GetFirstExaminationDateAsync(int examinationDateId);
 
-        Task<bool> DeleteExaminationDateAsync(int examinationDateId);
+        Task<ValidationResponse> DeleteExaminationDateAsync(int examinationDateId);
     }
 }

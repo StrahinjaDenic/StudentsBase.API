@@ -12,6 +12,6 @@ namespace StudentsBaseAPI.IBusinessLogic
 
         Task<CourseInputViewModel> GetFirstCourseInputViewModelAsync(int id);
 
-        Task<bool> DeleteCourseAsync(int courseId);
+        Task<ValidationResponse> DeleteCourseAsync(int courseId);
     }
 }

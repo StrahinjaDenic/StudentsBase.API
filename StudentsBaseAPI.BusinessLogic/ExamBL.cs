@@ -54,14 +54,21 @@ namespace StudentsBaseAPI.BusinessLogic
             return _mapper.Map<ExamInputViewModel>(result);
         }
 
-        public async Task<bool> DeleteExmAsync(int id)
+        public async Task<ValidationResponse> DeleteExmAsync(int id)
         {
+            var response = new ValidationResponse();
             if (id > 0)
             {
-                return await _examDAL.DeleteExamAsync(id);
+                response.IsSuccess = await _examDAL.DeleteExamAsync(id);
+                response.Message = response.IsSuccess == true ? "Exam succesfully deleted!" : "Error occured!";
+            }
+            else 
+            {
+                response.IsSuccess = false;
+                response.Message = "ID value for professor is not valid!";
             }
 
-            throw new ArgumentException("ID value for professor is not valid");
+            return response;
         }
 
         public async Task<Exam> GetFirstExamAsync(int id)

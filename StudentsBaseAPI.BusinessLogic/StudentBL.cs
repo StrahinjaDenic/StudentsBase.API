@@ -62,13 +62,21 @@ namespace StudentsBaseAPI.BusinessLogic
             return await _studentDAL.GetFirstStudentAsync(Id);
         }
 
-        public async Task<bool> DeleteStudentAsync(int studentId)
+        public async Task<ValidationResponse> DeleteStudentAsync(int studentId)
         {
+            var response = new ValidationResponse();
             if (studentId > 0)
             {
-                return await _studentDAL.DeleteStudentAsync(studentId);
+                response.IsSuccess = await _studentDAL.DeleteStudentAsync(studentId);
+                response.Message = response.IsSuccess == true ? "Student succesfully deleted!" : "Error occured!";
             }
-            throw new ArgumentException("ID value for student is not valid");
+            else
+            {
+                response.IsSuccess = false;
+                response.Message = "ID value for examination date is not valid!";
+            }
+
+            return response;
         }
 
         public async Task<List<ProfessorCourseViewModel>> GetAllProfessorCoursesAsync()
