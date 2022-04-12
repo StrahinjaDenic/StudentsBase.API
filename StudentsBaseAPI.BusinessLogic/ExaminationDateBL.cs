@@ -40,7 +40,7 @@ namespace StudentsBaseAPI.BusinessLogic
         {
             var examinationDate = _mapper.Map<ExaminationDate>(model);
 
-            ValidationResponse response = new() { IsSuccess = false };
+            var response = new ValidationResponse();
 
             response.IsSuccess = await _examinationDateDAL.CreateOrEditAsync(examinationDate);
             response.Message = response.IsSuccess == true ? $"Examination date added/updated" : "Examination date was not added.";
@@ -48,7 +48,7 @@ namespace StudentsBaseAPI.BusinessLogic
             return response;
         }
 
-        public async Task<ExaminationDate> GetFirstExaminationDateAsync(int examinationDateId)
+        public async Task<ExaminationDate> GetFirstExaminationDateInputViewModelAsync(int examinationDateId)
         {
             return await _examinationDateDAL.GetFirstExaminationDateAsync(examinationDateId);
         }

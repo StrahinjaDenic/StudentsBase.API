@@ -50,7 +50,7 @@ namespace StudentsBaseAPI.Controllers
         public async Task<ActionResult<ExaminationDateInputViewModel>> EditAsync(int examinationDateId)
         {
             _logger.LogInformation($"Get Examination data with id {examinationDateId}");
-            return await TryReturnOk(() => _examinationDateBL.GetFirstExaminationDateAsync(examinationDateId));
+            return await TryReturnOk(() => _examinationDateBL.GetFirstExaminationDateInputViewModelAsync(examinationDateId));
         }
 
         [HttpDelete]

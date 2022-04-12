@@ -40,7 +40,7 @@ namespace StudentsBaseAPI.BusinessLogic
         {
             var exam = _mapper.Map<Exam>(model);
 
-            ValidationResponse response = new() { IsSuccess = false };
+            var response = new ValidationResponse();
 
             response.IsSuccess = await _examDAL.CreateOrEditAsync(exam);
             response.Message = response.IsSuccess == true ? $"Exam added/updated" : "Exam was not added.";
@@ -50,7 +50,7 @@ namespace StudentsBaseAPI.BusinessLogic
 
         public async Task<ExamInputViewModel> GetFirstExamInputViewModelAsync(int id)
         {
-            var result = await GetFirstExamAsync(id);
+            var result = await _examDAL.GetFirstExamAsync(id);
             return _mapper.Map<ExamInputViewModel>(result);
         }
 
@@ -69,11 +69,6 @@ namespace StudentsBaseAPI.BusinessLogic
             }
 
             return response;
-        }
-
-        public async Task<Exam> GetFirstExamAsync(int id)
-        {
-            return await _examDAL.GetFirstExamAsync(id);
         }
 
         #endregion

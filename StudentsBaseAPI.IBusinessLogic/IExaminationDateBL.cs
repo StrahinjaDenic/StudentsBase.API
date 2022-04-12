@@ -11,7 +11,7 @@ namespace StudentsBaseAPI.IBusinessLogic
 
         Task<ValidationResponse> CreateOrEditAsync(ExaminationDateInputViewModel model);
 
-        Task<ExaminationDate> GetFirstExaminationDateAsync(int examinationDateId);
+        Task<ExaminationDate> GetFirstExaminationDateInputViewModelAsync(int examinationDateId);
 
         Task<ValidationResponse> DeleteExaminationDateAsync(int examinationDateId);
     }

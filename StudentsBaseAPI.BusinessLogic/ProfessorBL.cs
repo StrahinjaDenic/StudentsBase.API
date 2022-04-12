@@ -41,7 +41,7 @@ namespace StudentsBaseAPI.BusinessLogic
         {
             var professor = _mapper.Map<Professor>(model);
 
-            ValidationResponse response = new() { IsSuccess = false };
+            var response = new ValidationResponse();
 
             response.IsSuccess = await _professorDAL.CreateOrEditAsync(professor);
             response.Message = response.IsSuccess == true ? $"Professor added/updated" : "Professor was not added.";
@@ -68,14 +68,9 @@ namespace StudentsBaseAPI.BusinessLogic
             return response;
         }
 
-        public async Task<Professor> GetFirstProfessorAsync(int Id)
-        {
-            return await _professorDAL.GetFirstProfessorAsync(Id);
-        }
-
         public async Task<ProfessorInputViewModel> GetFirstProfessorInputViewModelAsync(int professorId)
         {
-            var result = await GetFirstProfessorAsync(professorId);
+            var result = await _professorDAL.GetFirstProfessorAsync(professorId);
             return _mapper.Map<ProfessorInputViewModel>(result);
         }
 

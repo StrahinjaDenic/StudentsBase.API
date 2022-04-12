@@ -41,9 +41,9 @@ namespace StudentsBaseAPI.BusinessLogic
 
         public async Task<ValidationResponse> CreateOrEditAsync(StudentInputViewModel model)
         {
-            var student = _mapper.Map<Student>(model); 
-             
-            ValidationResponse response = new() { IsSuccess = false };
+            var student = _mapper.Map<Student>(model);
+
+            var response = new ValidationResponse();
 
             response.IsSuccess = await _studentDAL.CreateOrEditAsync(student);
             response.Message = response.IsSuccess == true ? $"Student added/updated" : "Student was not added.";
@@ -53,13 +53,8 @@ namespace StudentsBaseAPI.BusinessLogic
 
         public async Task<StudentInputViewModel> GetFirstStudentInputViewModelAsync(int studentId)
         {
-            var result = await GetFirstStudentAsync(studentId);
+            var result = await _studentDAL.GetFirstStudentAsync(studentId);
             return _mapper.Map<StudentInputViewModel>(result);
-        }
-
-        public async Task<Student> GetFirstStudentAsync(int Id)
-        {
-            return await _studentDAL.GetFirstStudentAsync(Id);
         }
 
         public async Task<ValidationResponse> DeleteStudentAsync(int studentId)

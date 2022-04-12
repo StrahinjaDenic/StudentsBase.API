@@ -13,8 +13,6 @@ namespace StudentsBaseAPI.IBusinessLogic
 
         Task<StudentInputViewModel> GetFirstStudentInputViewModelAsync(int studentId);
 
-        Task<Student> GetFirstStudentAsync(int Id);
-
         Task<ValidationResponse> DeleteStudentAsync(int studentId);
 
         Task<List<ProfessorCourseViewModel>> GetAllProfessorCoursesAsync();

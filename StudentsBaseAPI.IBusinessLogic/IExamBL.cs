@@ -15,7 +15,5 @@ namespace StudentsBaseAPI.IBusinessLogic
         Task<ExamInputViewModel> GetFirstExamInputViewModelAsync(int id);
 
         Task<ValidationResponse> DeleteExmAsync(int id);
-
-        Task<Exam> GetFirstExamAsync(int id);
     }
 }
